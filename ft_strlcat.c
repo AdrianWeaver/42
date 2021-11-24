@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:38:38 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/23 13:42:22 by aweaver          ###   ########.fr       */
+/*   Created: 2021/11/24 09:06:18 by aweaver           #+#    #+#             */
+/*   Updated: 2021/11/24 09:15:30 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s)
-		i++;
-	return (i);
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	dst_len;
+
+	dst_len = ft_strlen(dst);
+	if (!size || dst_len >= size)
+		return (size + ft_strlen(src));
+	ft_strlcpy(&dest[dest_len], src, size - dst_len);
+	return (dst_len + ft_strlen(src));
 }

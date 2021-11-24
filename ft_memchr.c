@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:38:38 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/23 13:42:22 by aweaver          ###   ########.fr       */
+/*   Created: 2021/11/24 10:28:35 by aweaver           #+#    #+#             */
+/*   Updated: 2021/11/24 10:37:58 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
+void	*mmemchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s)
-		i++;
-	return (i);
+	while (i < n)
+	{
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return ((unsigned char *)s[i]);
+	}
+	return (0);
 }

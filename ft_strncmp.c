@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:38:38 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/23 13:42:22 by aweaver          ###   ########.fr       */
+/*   Created: 2021/11/24 10:21:46 by aweaver           #+#    #+#             */
+/*   Updated: 2021/11/24 10:27:09 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
+int	strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s)
+	if (n <= 0)
+		return (0);
+	while (s1[i] && i < n - 1 && s1[i] == s2[i])
 		i++;
-	return (i);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

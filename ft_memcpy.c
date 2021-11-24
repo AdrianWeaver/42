@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:38:38 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/23 13:42:22 by aweaver          ###   ########.fr       */
+/*   Created: 2021/11/23 16:09:38 by aweaver           #+#    #+#             */
+/*   Updated: 2021/11/23 16:16:22 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	int	i;
 
 	i = 0;
-	while (s)
+	while (i < n)
+	{
+		dest[i] = src[i];
 		i++;
-	return (i);
+	}
+	return (dest);
 }

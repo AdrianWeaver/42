@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:38:38 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/23 13:42:22 by aweaver          ###   ########.fr       */
+/*   Created: 2021/11/24 10:14:26 by aweaver           #+#    #+#             */
+/*   Updated: 2021/11/24 10:21:17 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *s)
+#include "libft.h"
+
+char	*strchr(const char *s, int c)
 {
 	int	i;
 
-	i = 0;
-	while (s)
-		i++;
-	return (i);
+	i = ft_strlen(s);
+	if (s[i + 1] == c)
+		return (s[i + 1]);
+	while (i)
+	{
+		if (s[i] == c)
+			return ((char *)s[i]);
+		i--;
+	}
+	return (0);
 }
