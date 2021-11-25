@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2021/11/23 11:42:58 by aweaver          ###   ########.fr        #
+#    Updated: 2021/11/24 15:08:18 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,34 +48,43 @@ SRCS	=	ft_isalpha.c	\
 
 #unsure about the following	
 #should I add a _bonus before all the names?
-BONUS	=	ft_lstnew.c
-			ft_lstadd_front.c
-			ft_lstsize.c
-			ft_lstlast.c
-			ft_lstadd_back.c
-			ft_lstdelone.c
-			ft_lstclear.c
-			ft_lstiter.c
-			ft_lstmap.c
+BONUS		=	ft_lstnew.c			\
+				ft_lstadd_front.c	\
+				ft_lstsize.c		\
+				ft_lstlast.c		\
+				ft_lstadd_back.c	\
+				ft_lstdelone.c		\
+				ft_lstclear.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c			\
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS		=	$(SRCS:.c=.o)
 
-CC		=	gcc
+OBJS_BONUS	=	$(BONUS:.c=.o)
 
-CFLAGS	+=	-Wall -Wextra -Werror
+CC			=	gcc
 
-LIBFLAG +=	-rcs
-#I might need to add a lib rule with -ar
-all		=	
-			@make $(NAME)
+CFLAGS		+=	-Wall -Wextra -Werror
 
-$(NAME) =	$(OBJS) #should I add a lib rule here?
-			$(CC) $(CFLAGS) #if so should I add a $(LIB) ?
+all:		$(NAME)
 
-clean 	=	
-			rm -f $(OBJS)
 
-fclean	=	clean
+$(NAME):	$(OBJS)
+			ar -rcs $@ $^
+
+bonus:		$(OBS_BONUS) $(OBJS)
+			ar -rcs $(NAME) $^
+
+.o:			.c
+			$(CC) $(CFLAGS) -c $< -o $@ -I .
+
+clean:	
+			rm -f $(OBJS) $(OBJ_BONUS)
+
+fclean:		clean
 			rm -f $(NAME)
 
-re		=	fclean all
+re:			fclean all
+
+rebonus:	fclean bonus
+.PHONY:		all re clean clean bonus

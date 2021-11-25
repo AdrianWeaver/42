@@ -6,15 +6,15 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 09:11:15 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/24 09:28:25 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/25 14:00:58 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_isupper(int c)
+static	int	ft_islower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (c >= 'a' && c <= 'z')
 		return (1);
 	return (0);
 }

@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 11:10:55 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/25 14:14:39 by aweaver          ###   ########.fr       */
+/*   Created: 2021/11/25 14:22:28 by aweaver           #+#    #+#             */
+/*   Updated: 2021/11/25 14:36:08 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (little[i] == 0)
-		return ((char *)big);
-	if (len == 0)
-		return (0);
-	while (big[i])
-	{
-		j = 0;
-		while (big[i] == little[j])
-		{
-			if (j == len || little[j + 1] == 0)
-				return ((char *)&big[i]);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (nmemb == 0 || size == 0)
+		return (NULL);
 }
