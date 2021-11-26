@@ -6,13 +6,13 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:02:00 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/25 13:59:11 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/25 14:57:41 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 

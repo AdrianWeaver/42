@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2021/11/24 15:08:18 by aweaver          ###   ########.fr        #
+#    Updated: 2021/11/26 18:12:53 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,17 +34,17 @@ SRCS	=	ft_isalpha.c	\
 			ft_atoi.c		\
 			ft_calloc.c		\
 			ft_strdup.c		\
-			ft_substr.c		\
-			ft_strjoin.c	\
-			ft_strtrim.c	\
-			ft_split.c		\
-			ft_itoa.c		\
-			ft_strmapi.c	\
-			ft_striteri.c	\
-			ft_putchar_fd.c	\
-			ft_putstr_fd.c	\
-			ft_putendl_fd.c	\
-			ft_putnbr_fd.c	\
+			ft_substr.c		
+			#ft_strjoin.c	
+#			ft_strtrim.c	\
+#			ft_split.c		\
+#			ft_itoa.c		\
+#			ft_strmapi.c	\
+#			ft_striteri.c	\
+#			ft_putchar_fd.c	\
+#			ft_putstr_fd.c	\
+#			ft_putendl_fd.c	\
+#			ft_putnbr_fd.c	\
 
 #unsure about the following	
 #should I add a _bonus before all the names?
@@ -64,7 +64,7 @@ OBJS_BONUS	=	$(BONUS:.c=.o)
 
 CC			=	gcc
 
-CFLAGS		+=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
 
 all:		$(NAME)
 

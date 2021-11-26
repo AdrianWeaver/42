@@ -6,13 +6,13 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:21:46 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/25 14:01:22 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/26 12:24:58 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

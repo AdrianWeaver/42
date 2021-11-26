@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:43:35 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/24 09:15:56 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/26 12:18:37 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
+/*
 #include <stdio.h>
 int	main(int ac, char** av)
 {
@@ -47,3 +48,4 @@ int	main(int ac, char** av)
 		i++;
 	}
 }
+*/

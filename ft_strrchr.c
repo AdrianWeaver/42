@@ -6,23 +6,21 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:14:26 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/24 10:21:17 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/26 16:05:43 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
 	i = ft_strlen(s);
-	if (s[i + 1] == c)
-		return (s[i + 1]);
-	while (i)
+	while (i >= 0)
 	{
 		if (s[i] == c)
-			return ((char *)s[i]);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (0);

@@ -6,11 +6,11 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 09:29:31 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/24 10:20:19 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/26 12:24:17 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
