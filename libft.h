@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/26 17:48:07 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/26 19:31:29 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ char	*ft_strdup(const char *s);
 # ifndef __FT_SUBSTR_H__
 #  define __FT_SUBSTR_H__
 
-char *ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 # endif
 

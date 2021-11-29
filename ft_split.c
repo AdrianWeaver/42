@@ -5,104 +5,94 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 12:30:21 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/25 15:32:36 by aweaver          ###   ########.fr       */
+/*   Created: 2021/11/29 11:27:49 by aweaver           #+#    #+#             */
+/*   Updated: 2021/11/29 14:37:34 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-static int	ft_is_sep(char c, char *charset)
+static size_t	ft_count_words(char const *s, char c)
 {
-	int	i;
+	size_t	in_a_word;
+	size_t	word_count;
 
-	i = 0;
-	while (charset[i])
+	in_a_word = 0;
+	word_count = 0;
+	while (*s)
 	{
-		if (charset[i] == c)
-			return (1);
-		i++;
+		if (in_a_word == 0 && *s != c)
+			in_a_word = 1;
+		if (in_a_word == 1 && (*s == c || *(s + 1) == 0))
+		{
+			in_a_word = 0;
+			word_count++;
+		}
+		s++;
 	}
-	return (0);
+	return (word_count);
 }
 
-static int	ft_strlen_custom(char *str, char *charset)
+static size_t	ft_custom_strlen(const char *s, char c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] && ft_is_sep(str[i], charset) == 0)
+	while (s[i] && s[i] != c)
 		i++;
 	return (i);
 }
 
-static char	*ft_strndup(char *src, int n)
+/*static size_t	ft_check_malloc(char **tab, char *str, size_t index)
 {
-	char	*dest;
-	int		i;
-
-	i = 0;
-	dest = malloc(sizeof(*dest) * (n + 1));
-	if (dest == 0)
-		return (0);
-	while (src[i] && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
-}
-
-static int	ft_count_words(char *str, char *charset)
-{
-	int	in_a_word;
-	int	count_words;
-	int	i;
-
-	i = 0;
-	count_words = 0;
-	in_a_word = 0;
-	while (str[i])
-	{
-		if (in_a_word == 0 && ft_is_sep(str[i], charset) == 0)
-			in_a_word = 1;
-		if (in_a_word == 1 && (ft_is_sep(str[i], charset) == 1
-				|| str[i + 1] == 0))
+	if (!str && index != 0)
+	{	
+		while (index != 0)
 		{
-			in_a_word = 0;
-			count_words++;
+			free(tab[index - 1]);
+			index--;
 		}
-		i++;
+		free(tab);
+	return (0);
 	}
-	return (count_words);
+	if (!str)
+	{
+		free(tab);
+		return (0);
+	}
+	return (1);
 }
+*/
 
-char	**ft_split(char const *str, char *charset)
+
+char	**ft_split(char const *s, char c)
 {
-	int		i;
-	char	**splitted;
-	int		word_count;
-	int		n;
-	int		j;
+	char	**tab;
+	size_t	word_count;
+	size_t	i;
+	size_t	j;
+	size_t	word_length;
 
 	i = 0;
 	j = 0;
-	word_count = ft_count_words(str, charset);
-	splitted = malloc(sizeof(*splitted) * (word_count + 1));
-	if (splitted == 0)
+	if (!s)
 		return (0);
-	splitted[word_count] = 0;
+	word_count = ft_count_words(s, c);
+	tab = malloc(sizeof(*tab) * (word_count + 1));
+	if (!tab)
+		return (0);
+	tab[word_count] = 0;
 	while (i < word_count)
 	{
-		while (str[j] && ft_is_sep(str[j], charset))
-		{
+		while (s[j] == c)
 			j++;
-		}	
-		n = ft_strlen_custom(&str[j], charset);
-		splitted[i] = ft_strndup(&str[j], n);
-		j += n;
+		word_length = ft_custom_strlen(&s[j], c);
+		tab[i] = ft_substr(s, j, (word_length));
+		j += word_length;
+		//if (ft_check_malloc(tab, tab[i], i) == 0)
+		//	return (0);
 		i++;
 	}
-	return (splitted);
+	return (tab);
 }
