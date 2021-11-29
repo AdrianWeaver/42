@@ -6,18 +6,19 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:27:49 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/29 14:37:34 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/29 15:35:19 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c, size_t *j)
 {
 	size_t	in_a_word;
 	size_t	word_count;
 
+	*j = 0;
 	in_a_word = 0;
 	word_count = 0;
 	while (*s)
@@ -44,8 +45,9 @@ static size_t	ft_custom_strlen(const char *s, char c)
 	return (i);
 }
 
-/*static size_t	ft_check_malloc(char **tab, char *str, size_t index)
+static size_t	ft_check_malloc(char **tab, char *str, size_t index, size_t wc)
 {
+	(void)wc;
 	if (!str && index != 0)
 	{	
 		while (index != 0)
@@ -54,7 +56,7 @@ static size_t	ft_custom_strlen(const char *s, char c)
 			index--;
 		}
 		free(tab);
-	return (0);
+		return (0);
 	}
 	if (!str)
 	{
@@ -63,8 +65,6 @@ static size_t	ft_custom_strlen(const char *s, char c)
 	}
 	return (1);
 }
-*/
-
 
 char	**ft_split(char const *s, char c)
 {
@@ -74,25 +74,23 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	word_length;
 
-	i = 0;
-	j = 0;
+	i = -1;
 	if (!s)
 		return (0);
-	word_count = ft_count_words(s, c);
+	word_count = ft_count_words(s, c, &j);
 	tab = malloc(sizeof(*tab) * (word_count + 1));
 	if (!tab)
 		return (0);
 	tab[word_count] = 0;
-	while (i < word_count)
+	while (++i < word_count)
 	{
 		while (s[j] == c)
 			j++;
 		word_length = ft_custom_strlen(&s[j], c);
 		tab[i] = ft_substr(s, j, (word_length));
 		j += word_length;
-		//if (ft_check_malloc(tab, tab[i], i) == 0)
-		//	return (0);
-		i++;
+		if (ft_check_malloc(tab, tab[i], i, word_count) == 0)
+			return (0);
 	}
 	return (tab);
 }
