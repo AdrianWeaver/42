@@ -1,1 +1,5 @@
 libft.a
+test*
+*.swp
+*.swo
+main*
