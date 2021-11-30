@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/30 11:44:04 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/30 15:13:46 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,239 +15,251 @@
 
 # include <unistd.h>
 # include <stddef.h>
-# ifndef __FT_ISALPHA_H__
-#  define __FT_ISALPHA_H__
+
+# ifndef T_LIST
+#  define T_LIST
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+# endif
+
+# ifndef FT_ISALPHA_H
+#  define FT_ISALPHA_H
 
 int		ft_isalpha(int c);
 
 # endif
 
-# ifndef __FT_ISDIGIT_H__
-#  define __FT_ISDIGIT_H__
+# ifndef FT_ISDIGIT_H
+#  define FT_ISDIGIT_H
 
 int		ft_isdigit(int c);
 
 # endif
 
-# ifndef __FT_ISALNUM_H__
-#  define __FT_ISALNUM_H__
+# ifndef FT_ISALNUM_H
+#  define FT_ISALNUM_H
 
 int		ft_isalnum(int c);
 
 # endif
 
-# ifndef __FT_ISASCII_H__
-#  define __FT_ISASCII_H__
+# ifndef FT_ISASCII_H
+#  define FT_ISASCII_H
 
 int		ft_isascii(int c);
 
 # endif
 
-# ifndef __FT_ISPRINT_H__
-#  define __FT_ISPRINT_H__
+# ifndef FT_ISPRINT_H
+#  define FT_ISPRINT_H
 
 int		ft_isprint(int c);
 
 # endif
 
-# ifndef __FT_STRLEN_H__
-#  define __FT_STRLEN_H__
+# ifndef FT_STRLEN_H
+#  define FT_STRLEN_H
 
 size_t	ft_strlen(const char *s);
 
 # endif
 
-# ifndef __FT_MEMSET_H__
-#  define __FT_MEMSET_H__
+# ifndef FT_MEMSET_H
+#  define FT_MEMSET_H
 
 void	*ft_memset(void *s, int c, size_t n);
 
 # endif
 
-# ifndef __FT_BZERO_H__
-#  define __FT_BZERO_H__
+# ifndef FT_BZERO_H
+#  define FT_BZERO_H
 
 void	ft_bzero(void *s, size_t n);
 
 # endif
 
-# ifndef __FT_MEMCPY_H__
-#  define __FT_MEMCPY_H__
+# ifndef FT_MEMCPY_H
+#  define FT_MEMCPY_H
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 # endif
 
-# ifndef __FT_MEMMOVE_H__
-#  define __FT_MEMMOVE_H__
+# ifndef FT_MEMMOVE_H
+#  define FT_MEMMOVE_H
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
 # endif
 
-# ifndef __FT_STRLCPY_H__
-#  define __FT_STRLCPY_H__
+# ifndef FT_STRLCPY_H
+#  define FT_STRLCPY_H
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 # endif
 
-# ifndef __FT_STRLCAT_H__
-#  define __FT_STRLCAT_H__
+# ifndef FT_STRLCAT_H
+#  define FT_STRLCAT_H
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 # endif
 
-# ifndef __FT_TOUPPER_H__
-#  define __FT_TOUPPER_H__
+# ifndef FT_TOUPPER_H
+#  define FT_TOUPPER_H
 
 int		ft_toupper(int c);
 
 # endif
 
-# ifndef __FT_TOLOWER_H__
-#  define __FT_TOLOWER_H__
+# ifndef FT_TOLOWER_H
+#  define FT_TOLOWER_H
 
 int		ft_tolower(int c);
 
 # endif
 
-# ifndef __FT_STRCHR_H__
-#  define __FT_STRCHR_H__
+# ifndef FT_STRCHR_H
+#  define FT_STRCHR_H
 
 char	*ft_strchr(const char *s, int c);
 
 # endif
 
-# ifndef __FT_STRRCHR_H__
-#  define __FT_STRRCHR_H__
+# ifndef FT_STRRCHR_H
+#  define FT_STRRCHR_H
 
 char	*ft_strrchr(const char *s, int c);
 
 # endif
 
-# ifndef __FT_STRNCMP_H__
-#  define __FT_STRNCMP_H__
+# ifndef FT_STRNCMP_H
+#  define FT_STRNCMP_H
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 # endif
 
-# ifndef __FT_MEMCHR_H__
-#  define __FT_MEMCHR_H__
+# ifndef FT_MEMCHR_H
+#  define FT_MEMCHR_H
 
 void	*ft_memchr(const void *s, int c, size_t n);
 
 # endif
 
-# ifndef __FT_MEMCMP_H__
-#  define __FT_MEMCMP_H__
+# ifndef FT_MEMCMP_H
+#  define FT_MEMCMP_H
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 # endif
 
-# ifndef __FT_STRNSTR_H__
-#  define __FT_STRNSTR_H__
+# ifndef FT_STRNSTR_H
+#  define FT_STRNSTR_H
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 # endif
 
-# ifndef __FT_ATOI_H__
-#  define __FT_ATOI_H__
+# ifndef FT_ATOI_H
+#  define FT_ATOI_H
 
 int		ft_atoi(const char *nptr);
 
 # endif
 
-# ifndef __FT_CALLOC_H__
-#  define __FT_CALLOC_H__
+# ifndef FT_CALLOC_H
+#  define FT_CALLOC_H
 
 void	*ft_calloc(size_t nmemb, size_t size);
 
 # endif
 
-# ifndef __FT_STRDUP_H__
-#  define __FT_STRDUP_H__
+# ifndef FT_STRDUP_H
+#  define FT_STRDUP_H
 
 char	*ft_strdup(const char *s);
 
 # endif
 
-# ifndef __FT_SUBSTR_H__
-#  define __FT_SUBSTR_H__
+# ifndef FT_SUBSTR_H
+#  define FT_SUBSTR_H
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 # endif
 
-# ifndef __FT_STRJOIN_H__
-#  define __FT_STRJOIN_H__
+# ifndef FT_STRJOIN_H
+#  define FT_STRJOIN_H
 
 char	*ft_strjoin(char const *s1, char const *s2);
 
 # endif
 
-# ifndef __FT_STRTRIM_H__
-#  define __FT_STRTRIM_H__
+# ifndef FT_STRTRIM_H
+#  define FT_STRTRIM_H
 
 char	*ft_strtrim(char const *s1, char const *set);
 
 # endif
 
-# ifndef __FT_SPLIT_H__
-#  define __FT_SPLIT_H__
+# ifndef FT_SPLIT_H
+#  define FT_SPLIT_H
 
 char	**ft_split(char const *s, char c);
 
 # endif
 
-# ifndef __FT_ITOA_H__
-#  define __FT_ITOA_H__
+# ifndef FT_ITOA_H
+#  define FT_ITOA_H
 
 char	*ft_itoa(int n);
 
 # endif
 
-# ifndef __FT_STRMAPI_H__
-#  define __FT_STRMAPI_H__
+# ifndef FT_STRMAPI_H
+#  define FT_STRMAPI_H
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 # endif
 
-# ifndef __FT_STRITERI_H__
-#  define __FT_STRITERI_H__
+# ifndef FT_STRITERI_H
+#  define FT_STRITERI_H
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 # endif
 
-# ifndef __FT_PUTCHAR_FD_H__
-#  define __FT_PUTCHAR_FD_H__
+# ifndef FT_PUTCHAR_FD_H
+#  define FT_PUTCHAR_FD_H
 
 void	ft_putchar_fd(char c, int fd);
 
 # endif
 
-# ifndef __FT_PUTSTR_FD_H__
-#  define __FT_PUTSTR_FD_H__
+# ifndef FT_PUTSTR_FD_H
+#  define FT_PUTSTR_FD_H
 
 void	ft_putstr_fd(char *s, int fd);
 
 # endif
 
-# ifndef __FT_PUTENDL_FD_H__
-#  define __FT_PUTENDL_FD_H__
+# ifndef FT_PUTENDL_FD_H
+#  define FT_PUTENDL_FD_H
 
 void	ft_putendl_fd(char *s, int fd);
 
 # endif
 
-# ifndef __FT_PUTNBR_FD_H__
-#  define __FT_PUTNBR_FD_H__
+# ifndef FT_PUTNBR_FD_H
+#  define FT_PUTNBR_FD_H
 
 void	ft_putnbr_fd(int n, int fd);
 
