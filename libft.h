@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/26 19:31:29 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/11/30 11:44:04 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,7 +214,7 @@ char	*ft_itoa(int n);
 # ifndef __FT_STRMAPI_H__
 #  define __FT_STRMAPI_H__
 
-char	ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 # endif
 
