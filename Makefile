@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2021/11/29 11:15:56 by aweaver          ###   ########.fr        #
+#    Updated: 2021/11/29 15:47:14 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,8 @@ SRCS	=	ft_isalpha.c	\
 			ft_substr.c		\
 			ft_strjoin.c	\
 			ft_strtrim.c	\
-			ft_split.c		
-#			ft_itoa.c		\
+			ft_split.c		\
+			ft_itoa.c		
 #			ft_strmapi.c	\
 #			ft_striteri.c	\
 #			ft_putchar_fd.c	\
