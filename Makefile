@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2021/11/30 15:35:31 by aweaver          ###   ########.fr        #
+#    Updated: 2021/12/01 11:05:30 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,21 +46,21 @@ SRCS	=	ft_isalpha.c	\
 			ft_putendl_fd.c	\
 			ft_putnbr_fd.c	
 
-BONUS		=	ft_lstnew.c			
-				#ft_lstadd_front.c	\
-				#ft_lstsize.c		\
-				#ft_lstlast.c		\
-				#ft_lstadd_back.c	\
-				#ft_lstdelone.c		\
-				#ft_lstclear.c		\
-				#ft_lstiter.c		\
-				#ft_lstmap.c			
+BONUS		=	ft_lstnew.c			\
+				ft_lstadd_front.c	\
+				ft_lstsize.c		\
+				ft_lstlast.c		\
+				ft_lstadd_back.c	\
+				ft_lstdelone.c		\
+				ft_lstclear.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c			
 
 OBJS		=	$(SRCS:.c=.o)
 
 OBJS_BONUS	=	$(BONUS:.c=.o)
 
-CC			=	clang
+CC			=	gcc
 
 CFLAGS		=	-Wall -Wextra -Werror
 
