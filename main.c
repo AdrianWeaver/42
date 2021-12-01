@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 12:30:55 by jtoty             #+#    #+#             */
-/*   Updated: 2021/11/30 14:41:27 by aweaver          ###   ########.fr       */
+/*   Created: 2017/02/28 12:35:29 by jtoty             #+#    #+#             */
+/*   Updated: 2021/12/01 14:00:38 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,78 @@
 #include <unistd.h>
 #include "libft.h"
 
+void	ft_print_result(char const *s)
+{
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
+
 int		main(int argc, const char *argv[])
 {
+	char	*strtrim;
 	int		arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-		ft_putnbr_fd(0, 2);
+	{
+		char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+		if (!(strtrim = ft_strtrim(s1, " ")))
+			ft_print_result("NULL");
+		else
+			ft_print_result(strtrim);
+		if (strtrim == s1)
+			ft_print_result("\nA new string was not returned");
+	}
 	else if (arg == 2)
-		ft_putnbr_fd(5, 1);
+	{
+		char s1[] = "lorem ipsum dolor sit amet";
+		if (!(strtrim = ft_strtrim(s1, "te")))
+			ft_print_result("NULL");
+		else
+			ft_print_result(strtrim);
+		if (strtrim == s1)
+			ft_print_result("\nA new string was not returned");
+	}
 	else if (arg == 3)
-		ft_putnbr_fd(-5, 2);
+	{
+		char s1[] = " lorem ipsum dolor sit amet";
+		if (!(strtrim = ft_strtrim(s1, "l ")))
+			ft_print_result("NULL");
+		else
+			ft_print_result(strtrim);
+		if (strtrim == s1)
+			ft_print_result("\nA new string was not returned");
+	}
 	else if (arg == 4)
-		ft_putnbr_fd(42, 1);
+	{
+		char s1[] = "lorem ipsum dolor sit amet";
+		if (!(strtrim = ft_strtrim(s1, "tel")))
+			ft_print_result("NULL");
+		else
+			ft_print_result(strtrim);
+		if (strtrim == s1)
+			ft_print_result("\nA new string was not returned");
+	}
 	else if (arg == 5)
-		ft_putnbr_fd(-57, 2);
+	{
+		char s1[] = "          ";
+		if (!(strtrim = ft_strtrim(s1, " ")))
+			ft_print_result("NULL");
+		else
+			ft_print_result(strtrim);
+		if (strtrim == s1)
+			ft_print_result("\nA new string was not returned");
+	}
 	else if (arg == 6)
-		ft_putnbr_fd(164189, 1);
-	else if (arg == 7)
-		ft_putnbr_fd(-987441, 2);
-	else if (arg == 8)
-		ft_putnbr_fd(2147483647, 1);
-	else if (arg == 9)
-		ft_putnbr_fd(-2147483648, 2);
+	{
+		char s1[] ="aaaaaaa";
+		ft_print_result(ft_strtrim(s1, "a"));
+	}
 	return (0);
 }

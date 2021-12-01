@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:22:28 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/26 12:37:39 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/01 13:24:06 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ret;
 
-	if (nmemb == 0 || size == 0)
+	ret = malloc(size * nmemb);
+	if (!ret)
 		return (NULL);
-	ret = malloc(sizeof(size) * (nmemb));
-	if (ret == 0)
-		return (0);
-	ft_bzero(ret, nmemb);
+	ft_bzero(ret, nmemb * size);
 	return (ret);
 }

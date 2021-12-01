@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2021/12/01 10:50:20 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/01 12:48:30 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <unistd.h>
 # include <stddef.h>
 
-# ifndef T_LIST
-#  define T_LIST
+# ifndef T_LIST_
+#  define T_LIST_
 
 typedef struct s_list
 {

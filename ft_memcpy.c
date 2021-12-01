@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:09:38 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/24 16:02:58 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/01 12:27:45 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*dest_c;
 	char	*src_c;
 
+	if (dest == 0 && src == 0 && n > 0)
+		return (0);
 	dest_c = (char *)dest;
 	src_c = (char *)src;
 	while (n--)

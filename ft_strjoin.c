@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 10:03:03 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/26 19:31:55 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/01 14:09:09 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str_joined;
 
+	if (!s1 || !s2)
+		return (0);
 	str_joined = malloc(sizeof(*str_joined) * (ft_strlen(s1) + ft_strlen(s2)
 				+ 1));
 	if (str_joined == 0)
