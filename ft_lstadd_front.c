@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:04:46 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/30 16:19:14 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/01 14:35:17 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
 	new->next = *alst;
+	*alst = new;
 }
