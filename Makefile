@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2021/12/02 14:00:30 by aweaver          ###   ########.fr        #
+#    Updated: 2021/12/02 15:28:26 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,4 +86,5 @@ fclean:		clean
 re:			fclean all
 
 rebonus:	fclean bonus
-.PHONY:		all re clean clean bonus
+
+.PHONY:		all re clean fclean bonus rebonus
