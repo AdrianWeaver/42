@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 11:05:37 by aweaver           #+#    #+#             */
-/*   Updated: 2021/12/02 14:00:42 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/02 15:56:54 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*temp;
 
 	ret = NULL;
-	if (!f || !lst || !del)
-		return (0);
 	temp = lst;
 	while (temp)
 	{
