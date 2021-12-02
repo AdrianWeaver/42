@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2021/12/01 14:04:06 by aweaver          ###   ########.fr        #
+#    Updated: 2021/12/02 09:16:06 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,10 +75,6 @@ bonus:		$(OBJS_BONUS) $(OBJS)
 
 .o:			.c
 			$(CC) $(CFLAGS) -c $< -o $@ -I .
-
-so:
-			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-			gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:	
 			rm -f $(OBJS) $(OBJS_BONUS)

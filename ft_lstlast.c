@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 16:28:54 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/30 16:59:46 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/02 08:49:53 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	while (lst[i].next)
-		i++;
-	if (i == 0)
-		return (lst[0].next);
-	return (lst[i - 1].next);
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

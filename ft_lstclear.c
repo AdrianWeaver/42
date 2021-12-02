@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 09:51:16 by aweaver           #+#    #+#             */
-/*   Updated: 2021/12/01 10:58:21 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/02 09:05:35 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *temp;
-	t_list **ret;
+	t_list	*temp;
+	t_list	**ret;
 
 	ret = lst;
 	while (*lst)
