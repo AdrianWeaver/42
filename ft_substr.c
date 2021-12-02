@@ -6,12 +6,23 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:40:41 by aweaver           #+#    #+#             */
-/*   Updated: 2021/12/01 13:56:04 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/02 12:21:24 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
+
+static size_t	ft_strnlen(char const *s, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] && i < size)
+		i++;
+	return (i);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -22,13 +33,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (0);
-	s_len = ft_strlen(s);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (ret == 0)
-		return (NULL);
-	while (i < len && s[i] && (start < s_len))
+	if (start >= ft_strlen(s))
 	{
-		ret[i] = s[start + i];
+		ret = malloc(sizeof(*ret) * 1);
+		*ret = 0;
+		return (ret);
+	}
+	s_len = ft_strnlen (&s[start], len);
+	ret = malloc(sizeof(*ret) * (s_len + 1));
+	if (!ret)
+		return (0);
+	while (i < s_len)
+	{
+		ret[i] = (char)s[start + i];
 		i++;
 	}
 	ret[i] = 0;

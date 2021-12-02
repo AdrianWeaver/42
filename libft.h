@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2021/12/01 12:48:30 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/02 13:21:20 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,68 +265,66 @@ void	ft_putnbr_fd(int n, int fd);
 
 # endif
 
-#ifndef FT_LSTNEW_H
+# ifndef FT_LSTNEW_H
 #  define FT_LSTNEW_H
 
 t_list	*ft_lstnew(void *content);
 
 # endif
 
-#ifndef FT_LSTADD_FRONT_H
+# ifndef FT_LSTADD_FRONT_H
 #  define FT_LSTADD_FRONT_H
 
 void	ft_lstadd_front(t_list **alst, t_list *new);
 
 # endif
 
-#ifndef FT_LSTSIZE_H
+# ifndef FT_LSTSIZE_H
 #  define FT_LSTSIZE_H
 
 int		ft_lstsize(t_list *lst);
 
 # endif
 
-#ifndef FT_LSTLAST_H
+# ifndef FT_LSTLAST_H
 #  define FT_LSTLAST_H
 
 t_list	*ft_lstlast(t_list *lst);
 
 # endif
 
-#ifndef FT_LSTADD_BACK_H
+# ifndef FT_LSTADD_BACK_H
 #  define FT_LSTADD_BACK_H
 
 void	ft_lstadd_back(t_list **alst, t_list *new);
 
 # endif
 
-#ifndef FT_LSTDELONE_H
+# ifndef FT_LSTDELONE_H
 #  define FT_LSTDELONE_H
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 # endif
 
-#ifndef FT_LSTCLEAT_H
+# ifndef FT_LSTCLEAT_H
 #  define FT_LSTCLEAT_H
 
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 
 # endif
 
-#ifndef FT_LSTITER_H
+# ifndef FT_LSTITER_H
 #  define FT_LSTITER_H
 
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 # endif
 
-#ifndef FT_LSTMAP_H
+# ifndef FT_LSTMAP_H
 #  define FT_LSTMAP_H
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 # endif
-
-
 #endif
