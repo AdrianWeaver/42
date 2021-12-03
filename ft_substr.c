@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:40:41 by aweaver           #+#    #+#             */
-/*   Updated: 2021/12/02 12:21:24 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/03 09:37:09 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	s_len;
 
-	i = 0;
+	i = -1;
 	if (!s)
 		return (0);
 	if (start >= ft_strlen(s))
 	{
 		ret = malloc(sizeof(*ret) * 1);
+		if (!ret)
+			return (0);
 		*ret = 0;
 		return (ret);
 	}
@@ -43,11 +45,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ret = malloc(sizeof(*ret) * (s_len + 1));
 	if (!ret)
 		return (0);
-	while (i < s_len)
-	{
+	while (++i < s_len)
 		ret[i] = (char)s[start + i];
-		i++;
-	}
 	ret[i] = 0;
 	return (ret);
 }

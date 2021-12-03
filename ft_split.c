@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:27:49 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/29 15:35:19 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/03 15:28:39 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,8 @@ static size_t	ft_custom_strlen(const char *s, char c)
 	return (i);
 }
 
-static size_t	ft_check_malloc(char **tab, char *str, size_t index, size_t wc)
+static size_t	ft_check_malloc(char **tab, char *str, size_t index)
 {
-	(void)wc;
 	if (!str && index != 0)
 	{	
 		while (index != 0)
@@ -89,7 +88,7 @@ char	**ft_split(char const *s, char c)
 		word_length = ft_custom_strlen(&s[j], c);
 		tab[i] = ft_substr(s, j, (word_length));
 		j += word_length;
-		if (ft_check_malloc(tab, tab[i], i, word_count) == 0)
+		if (ft_check_malloc(tab, tab[i], i) == 0)
 			return (0);
 	}
 	return (tab);
