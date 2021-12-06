@@ -6,13 +6,12 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:40:41 by aweaver           #+#    #+#             */
-/*   Updated: 2021/12/03 09:37:09 by aweaver          ###   ########.fr       */
+/*   Updated: 2021/12/06 08:31:55 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static size_t	ft_strnlen(char const *s, size_t size)
 {
